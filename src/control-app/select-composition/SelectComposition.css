@@ -1,0 +1,70 @@
+#compositionBrowser{
+    width: 100%; 
+    height: 100%; 
+    border:solid 0px black ;
+    
+}
+.modal-dialog overlay {
+    background:'rgba(0, 0, 0, 0.75)';
+    z-index: 99;
+}
+.modal-dialog {
+    height:100%;
+
+}
+.modalComp{ position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background-color: #2E3035;
+    padding:0;
+    overflow:hidden;
+    border-radius:0px;
+    border:none;
+    overflow:auto;
+    width: 80%;
+    height: 80%;
+    z-index: 10000;
+}
+.modalComp.fadeOut {
+    animation: 1s fadeOutModal;
+    animation-fill-mode: forwards;
+}
+.modalComp.fadeIn {
+    animation: 1s fadeInModal;
+    animation-fill-mode: forwards;
+}
+
+h4.modal-title {
+    margin:0;
+}
+@keyframes fadeOutModal {
+    0% {
+      opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        height:0;
+    }
+  }
+  
+@keyframes fadeInModal {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+    100% {
+        opacity: 1; 
+           
+    }
+  }
+
+.comp_Name{
+    display: inline;
+    opacity: 0.6;
+    padding-left: 0.5vh;
+    font-size: 1.1vh;
+    line-height: 2.4vh;
+}

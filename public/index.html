@@ -9,6 +9,38 @@
       name="description"
       content="Web site created using create-react-app"
     />
+      <!-- REQUIRED FOR DEVELOPMENT to run and test a Singular App on a local PC -->
+    <!-- Load to use the Singular App SDK Library -->
+    <!-- Required: ALLWAYS!! -->
+    <script src="https://app.singular.live/libs/singularapp/0.0.5/singularapp.js"></script>
+    <!-- Load to use the Singular Graphics SDK Library -->
+    <!-- Required: for running a local instance of the Singular render engine -->
+    <!-- <script src="https://app.singular.live/libs/singularplayer/0.1.2/singularplayer.js"></script> -->
+    <!-- Load the Firebase JavaScript Library -->
+    <!-- Required: ALLWAYS for sending data from the app to the composition and when using the App SDK storage feature -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+    <script src="https://app.singular.live/libs/singularplayer/0.1.2/singularplayer.js"></script>
+    <script>
+      window.hola= "hola";
+      if ( !parent || (parent && !parent.runningOnSingularServer)) {
+
+        SingularApp.createWithAppInstanceKey(
+          "CVM0Q3IudcBTWetTx6i0yTW6RST1fWkZ",
+          "https://app.singular.live/",
+          singularAppInit,
+          "lesliekajomovitz@gmail.com",
+          "cybulalau26"
+        )
+        function singularAppInit(app) {
+          window.singularApp = app;
+          window.production = false;
+          window.SingularPlayer = SingularPlayer;
+          console.log(window.singularApp);
+          console.log("index.html: singularAppInit() - Called");
+        }
+      }
+    </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
